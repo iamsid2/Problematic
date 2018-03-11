@@ -3,6 +3,7 @@ var router = express.Router();
 const UserModel = require('../models/users');
 const ProblemModel = require('../models/problems');
 const displayUser = require('../controller/displayUser');
+var login = require("../controller/login");
 /* GET home page. */
 
 
@@ -48,4 +49,14 @@ router.get('/authPage',(req,res) => {
 
 
 router.get('/', displayUser.showData);
+
+router.get("/login", function(req, res, next) {
+  if (req.session.user) {
+      if (req.session.user === "admin") res.redirect('/authPage');
+      else res.redirect('/');
+  } else res.render('login');
+});
+
+router.post("/login" , login.userAuthenticate );
+
 module.exports = router;

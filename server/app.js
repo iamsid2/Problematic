@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/api', api);
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/xtasy' , { useMongoClient: true })
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/problem' , { useMongoClient: true })
 
 var db = mongoose.connection;
 db.once('open', function () {

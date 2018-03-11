@@ -2,11 +2,9 @@ var express = require('express');
 var router = express.Router();
 const UserModel = require('../models/users');
 const ProblemModel = require('../models/problems');
-
+const displayUser = require('../controller/displayUser');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+
 
 router.get('/addproblem', function(req, res, next) {
   res.render('addproblem');
@@ -43,4 +41,11 @@ router.post('/addproblem', (req, res) => {
     });
     res.redirect("/")
 });
+
+router.get('/authPage',(req,res) => {
+  res.render('authPage');
+});
+
+
+router.get('/', displayUser.showData);
 module.exports = router;

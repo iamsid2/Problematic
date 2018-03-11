@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>PROBLEMATIC</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <% for(var i=0; i < problems.length; i++) { %>
+      <b>Title</b> </t><%= problems[i].title %><br>
+      <b>Description</b> </t><%= problems[i].description %><br>
+      <b>Name</b> </t><%= problems[i].name %>
+      <br>
+      <button>High</button>
+      <button>Moderate</button>
+      <button>Low</button>
+      <br>
+      <button onclick=location.href='http://localhost:5000'>Start Discussion</button>
+      <br>
+      <br>
+    <% } %>
+    <br>
+    <br>
+    <button onClick=location.href='/addproblem'>New Problem</button>
   </body>
 </html>

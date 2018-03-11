@@ -8,7 +8,8 @@ var problemSchema = new Schema({
 
     name : { type : String , required : true},
     title : { type : String , required : true},
-    description : { type : String , required : true}
+    description : { type : String , required : true},
+    priority : {type : Number}
 });
 
 var problemModel = mongoose.model('problem', problemSchema);

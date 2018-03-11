@@ -9,7 +9,9 @@ var userSchema = new Schema({
     name : { type : String , required : true},
     email : { type : String , required : true},
     contact : { type : String , required : true},
-    designation : { type : String , required : true}
+    designation : { type : String , required : true},
+    password : { type : String , required : true}
+
 });
 
 var userModel = mongoose.model('user', userSchema);

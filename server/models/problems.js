@@ -9,7 +9,9 @@ var problemSchema = new Schema({
     name : { type : String , required : true},
     title : { type : String , required : true},
     description : { type : String , required : true},
-    priority : {type : Number}
+    high : {type : Number, default : 0},
+    mod : {type : Number, default : 0},
+    low : {type : Number, default : 0}
 });
 
 var problemModel = mongoose.model('problem', problemSchema);

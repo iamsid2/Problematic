@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import HttpService from '../services/hhtp-service';
+import HttpService from '../services/http-service';
 import Problem from '../problem/problem';
 
 const http = new HttpService();

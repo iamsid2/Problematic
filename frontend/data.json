@@ -1,0 +1,2 @@
+db.problems.insert({"title": "Clean the rooms","description":"Rooms remain dirty","name":"Aquib Baig"})
+db.problems.insert({"title": "Aquaguard failure","description":"No water to drink","name":"Sidhant Mund"})

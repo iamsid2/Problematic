@@ -2,24 +2,33 @@
 <html>
   <head>
     <title>PROBLEMATIC</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="./public/stylesheets/bootstrap.min.css">
+    <script src="./public/js/jquery-3.3.1.min.js"></script>
+    <script src="./public/js/tether.min.js"></script>
+    <script src="./public/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <% for(var i=0; i < problems.length; i++) { %>
-      <b>Title</b> </t><%= problems[i].title %><br>
-      <b>Description</b> </t><%= problems[i].description %><br>
-      <b>Name</b> </t><%= problems[i].name %>
+      <div class="row">
+        <button class="btn btn-danger" onClick=location.href='/addproblem' > Post a Problem? </button>
+      </div>
       <br>
-      <button>High</button>
-      <button>Moderate</button>
-      <button>Low</button>
-      <br>
-      <button onclick=location.href='http://localhost:5000'>Start Discussion</button>
-      <br>
-      <br>
-    <% } %>
-    <br>
-    <br>
-    <button onClick=location.href='/addproblem'>New Problem</button>
+      <div class="card container" style="text-align:center; background-color:#F2ECE1">
+        <% for(var i=0; i < problems.length; i++) { %>
+        <h1> </t><%= problems[i].title %><br> </h1>
+        <h8> </t><%= problems[i].description %><br> </h8>
+        <h4></t><b>Author : </b><%= problems[i].name %> </h4>
+        <button >High</button>
+        <button>Moderate</button>
+        <button>Low</button>
+        <button class="btn btn-primary" onclick=location.href='http://localhost:5000'>Start Discussion</button>
+        <br>
+        <br>
+        <br>
+        <% } %>
+        </div>
+
+
   </body>
 </html>

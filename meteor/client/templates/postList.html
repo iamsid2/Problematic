@@ -1,0 +1,10 @@
+<template name = "postList">
+<ul class="post-list">
+    {{#each posts}}
+    <li class="post">
+      <div>{{content}}</div>
+      <div>Author</div>
+    </li>
+    {{/each}}
+</ul>
+</template>

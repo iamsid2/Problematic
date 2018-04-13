@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PROBLEMATIC</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <% for(var i=0; i < problems.length; i++) { %>
+      <b>Title</b> </t><%= problems[i].title %><br>
+      <b>Description</b> </t><%= problems[i].description %><br>
+      <b>Name</b> </t><%= problems[i].name %>
+      <br>
+      <button id="button" name=<%=problems[i].name %> value="high">High</button>
+      <button id="button" name=<%=problems[i].name %> value="mod">Moderate</button>
+      <button id="button" name=<%=problems[i].name %> value="low">Low</button>
+      <br>
+      <button onclick=location.href='http://localhost:5000'>Start Discussion</button>
+      <br>
+      <br>
+    <% } %>
+    <br>
+    <br>
+    <button onClick=location.href='/addproblem'>New Problem</button>
+  </body>
+  <script>
+    $(function(){
+      $('#button').click(function(e){
+        e.preventDefault();
+        var data = {};
+        data.val = this.getAttribute(value);
+        data.name = this.getAttribute(name);
+        $.ajax({
+          type: 'POST',
+          data: JSON.stringify(data),
+          url: 'http://localhost:3000/increment',
+          success: function(data) {
+            console.log('success');
+            console.log('data');
+          }
+        });
+      });
+    }) ;
+  
+  </script>
+</html>
